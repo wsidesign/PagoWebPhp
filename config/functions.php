@@ -27,7 +27,7 @@
                 'merchantDefineData' => array(
                     'MDD4' => 'integraciones.visanet@necomplus.com',
                     'MDD21' => 0,
-                    'MDD32' => '20406080',
+                    'MDD32' => '20220228',
                     'MDD75' => 'Registrado',
                     'MDD77' => 1
                 ),

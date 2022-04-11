@@ -18,6 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Respuesta de pago</title>
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
 </head>
 <body>
 
@@ -30,7 +31,7 @@
                     $c = preg_split('//', $data->dataMap->TRANSACTION_DATE, -1, PREG_SPLIT_NO_EMPTY);
                     ?>
                         <div class="alert alert-success" role="alert">
-                            <?php echo $data->dataMap->ACTION_DESCRIPTION;?>
+                            <?php echo "<font color='blue'>".$data->dataMap->ACTION_DESCRIPTION."</font>";?>
                         </div>
 
                         <div class="row">
@@ -53,7 +54,8 @@
                 $c = preg_split('//', $data->data->TRANSACTION_DATE, -1, PREG_SPLIT_NO_EMPTY);
                 ?>
                     <div class="alert alert-danger" role="alert">
-                        <?php echo $data->data->ACTION_DESCRIPTION;?>
+                        
+                        <?php echo "<font color='red'>".$data->data->ACTION_DESCRIPTION."</font>";?>
                     </div>
 
                     <div class="row">

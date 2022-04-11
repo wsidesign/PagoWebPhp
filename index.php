@@ -9,12 +9,13 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?php echo $detallePago ?></title>
+    <link rel="shortcut icon" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 <body>
@@ -22,7 +23,7 @@
     <br>
 
     <div class="container">
-        <h1 class="text-center">Pago con Visa</h1>
+        <h1 class="text-center">Botón de Pago Web</h1>
         <hr>
         <h3>Información del pago</h3>
         <b style="padding-left:20px;">Importe a pagar: </b> S/. <?php echo $amount; ?> <br>
@@ -32,16 +33,16 @@
         <hr>
         <!-- <h3>Realiza el pago</h3> -->
         <input type="checkbox" name="ckbTerms" id="ckbTerms" onclick="visaNetEc3()"> <label for="ckbTerms">Acepto los <a href="#" target="_blank">Términos y condiciones</a></label>
-        <form id="frmVisaNet" action="http://localhost:8082/PagoWebPhp/finalizar.php?amount=<?php echo $amount;?>&purchaseNumber=<?php echo $purchaseNumber?>">
+        <form id="frmVisaNet" action="http://localhost:8081/pagoweb/finalizar.php?amount=<?php echo $amount;?>&purchaseNumber=<?php echo $purchaseNumber?>">
             <script src="<?php echo VISA_URL_JS?>" 
                 data-sessiontoken="<?php echo $sesion;?>"
                 data-channel="web"
                 data-merchantid="<?php echo VISA_MERCHANT_ID?>"
-                data-merchantlogo="http://localhost:8082/PagoWebPhp/assets/img/logo.png"
+                data-merchantlogo="http://localhost:8081/pagoweb/assets/img/logo1.png"
                 data-purchasenumber="<?php echo $purchaseNumber;?>"
                 data-amount="<?php echo $amount; ?>"
                 data-expirationminutes="5"
-                data-timeouturl="http://localhost:8082/PagoWebPhp/"
+                data-timeouturl="http://localhost:8081/pagoweb/"
             ></script>
         </form>
     </div>
